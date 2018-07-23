@@ -1,0 +1,43 @@
+h1 {
+  color: red;
+  font-size: 50px;
+  text-align: center;
+}
+
+#cat1, #cat2 {
+  width: 50%;
+}
+
+#catPic1 {
+  height: 75%;
+  width: 75%;
+}
+
+#catPic2 {
+  height: 50%;
+  width: 50%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clicks {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.names {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.catContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
