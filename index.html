@@ -5,15 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <title>Cat Clicker!</title>
 </head>
 
 <body>
   <header>
-    <h1>Mike's Cat Clicker!</h1>
+    <h1 class="text-center">Mike's Cat Clicker!</h1>
   </header>
-  <div class="catContainer">
+  <!-- Original code -->
+  <!-- <div class="catContainer">
 
     <div id="cat1" class="container">
       <span id="catName1" class="names"></span>
@@ -31,12 +33,43 @@
       <span id="clicks2" class="clicks">0 Clicks!</span>
     </div>
 
+  </div> -->
+
+  <!-- bootstrap -->
+  <div class="container-fluid catDisplay">
+
+    <div class="row">
+
+      <div class="col-2">
+        <h3>Cats!</h3>
+        <ul>
+          <li>Buddy</li>
+          <li>Mimi</li>
+          <li>Nelson</li>
+          <li>Cosmo</li>
+          <li>Cloudy</li>
+        </ul>
+      </div>
+
+      <div class="col-8 catContainer">
+        <span id="catName1" class="names"></span>
+
+        <img src="assets/Black_barn_cat_-_Public_Domain.jpg" alt="black cat" id="catPic1">
+
+        <span id="clicks1" class="clicks">0 Clicks!</span>
+      </div>
+
+    </div>
+
   </div>
 
 
 
 
   <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 </body>
 
 </html>
