@@ -46,26 +46,25 @@ const cats = [{
 const catList = document.getElementById('catList');
 
 
-for (let i = 0; i <= cats.length; i++) {
-
-  let cat = cats[i];
+cats.forEach(function(cat) {
 
   let li = document.createElement('li');
-  let catName = document.getElementById('catName');
-  let catPic = document.getElementById('catPic');
 
-  li.appendChild(document.createTextNode(cat.name));
+
+  li.innerText = cat.name;
   li.setAttribute("id", cat.name);
 
 
 
 
 
-  li.addEventListener('click', (function() {
+  li.addEventListener('click', (function(selectedCat) {
+    let catName = document.getElementById('catName');
+    let catPic = document.getElementById('catPic');
     // display cat name and pic
     catName.innerText = cat.name;
 
-    catPic.setAttribute("src", cat.pic);
+    catPic.setAttribute('src', cat.pic);
 
     return function() {
 
@@ -82,5 +81,4 @@ for (let i = 0; i <= cats.length; i++) {
 
   catList.appendChild(li);
 
-
-};
+});
