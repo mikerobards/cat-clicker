@@ -46,7 +46,9 @@ const cats = [{
 const catList = document.getElementById('catList');
 
 
-cats.forEach(function(cat) {
+for (let i = 0; i <= cats.length; i++) {
+
+  let cat = cats[i];
 
   let li = document.createElement('li');
   let catName = document.getElementById('catName');
@@ -55,28 +57,30 @@ cats.forEach(function(cat) {
   li.appendChild(document.createTextNode(cat.name));
   li.setAttribute("id", cat.name);
 
+
+
+
+
+  li.addEventListener('click', (function() {
+    // display cat name and pic
+    catName.innerText = cat.name;
+
+    catPic.setAttribute("src", cat.pic);
+
+    return function() {
+
+      let selectedCat = document.getElementById(cat.name);
+      let catCount = 0;
+      selectedCat.addEventListener('click', () => {
+        catCount++;
+        clickTotal.innerText = `${catCount} Clicks!`;
+      }, false);
+
+      catName.innerText = cat.name;
+    };
+  })(cat));
+
   catList.appendChild(li);
 
 
-  // display cat name and pic
-  catName.innerText = cat.name;
-
-  catPic.setAttribute("src", cat.pic);
-
-  // li.addEventListener('click', (function(clickedCat) {
-  //   return function() {
-  //
-  //     let selectedCat = document.getElementById(cat.name);
-  //     let catCount = 0;
-  //     selectedCat.addEventListener('click', () => {
-  //       catCount++;
-  //       clickTotal.innerText = `${catCount} Clicks!`;
-  //     }, false);
-  //
-  //     catName.innerText = cat.name;
-  //   };
-  // })(clickedCat));
-
-
-
-});
+};
