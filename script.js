@@ -1,25 +1,53 @@
-const clickTotal1 = document.getElementById('clicks1');
-const clickTotal2 = document.getElementById('clicks2');
-let catName1 = document.getElementById('catName1');
-let catName2 = document.getElementById('catName2');
+const clickTotal = document.getElementById('clicks');
+let catName = document.getElementById('catName');
 const firstCat = "Buddy";
-const secondCat = "Curtis";
 
 
-const cat1 = document.getElementById('catPic1');
-let cat1count = 0;
-cat1.addEventListener('click', () => {
-	cat1count++;
-	clickTotal1.innerText = `${cat1count} Clicks!`;
+const cat = document.getElementById('catPic');
+let catCount = 0;
+cat.addEventListener('click', () => {
+  catCount++;
+  clickTotal.innerText = `${catCount} Clicks!`;
 }, false);
 
-catName1.innerText = firstCat;
+catName.innerText = firstCat;
 
-const cat2 = document.getElementById('catPic2');
-let cat2count = 0;
-cat2.addEventListener('click', () => {
-	cat2count++;
-	clickTotal2.innerText = `${cat2count} Clicks!`;
-}, false);
+// const cat2 = document.getElementById('catPic2');
+// let cat2count = 0;
+// cat2.addEventListener('click', () => {
+// 	cat2count++;
+// 	clickTotal2.innerText = `${cat2count} Clicks!`;
+// }, false);
+//
+// catName2.innerText = secondCat;
 
-catName2.innerText = secondCat;
+const cats = [{
+    name: "Buddy",
+    pic: "assets/Black_barn_cat_-_Public_Domain.jpg"
+  },
+  {
+    name: "Mimi",
+    pic: "assets/cat-face.jpg"
+  },
+  {
+    name: "Nelson",
+    pic: "assets/cat3.jpg"
+  },
+  {
+    name: "Cosmo",
+    pic: "assets/cat4.jpg"
+  },
+  {
+    name: "Cloudy",
+    pic: "assets/cat5.jpg"
+  }
+];
+
+const catList = document.getElementById('catList');
+
+cats.forEach(function(cat) {
+  let li = document.createElement('li');
+  li.appendChild(document.createTextNode(cat.name));
+  li.setAttribute("id", cat.name);
+  catList.appendChild(li);
+});

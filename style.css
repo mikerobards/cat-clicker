@@ -7,6 +7,10 @@ h1 {
   font-size: 75px;
 }
 
+h2 {
+  color: red;
+}
+
 .catDisplay {
   margin: 10% 20%;
 }
@@ -15,7 +19,7 @@ h1 {
   width: 50%;
 } */
 
-#catPic1 {
+#catPic {
   height: auto;
   width: 50%;
 }
@@ -48,4 +52,9 @@ h1 {
 #catList li {
   list-style: none;
   font-size: 20px;
+}
+
+li:hover {
+  color: red;
+  cursor: pointer;
 }
