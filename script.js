@@ -3,12 +3,12 @@ let catName = document.getElementById('catName');
 const firstCat = "Buddy";
 
 
-const cat = document.getElementById('catPic');
-let catCount = 0;
-cat.addEventListener('click', () => {
-  catCount++;
-  clickTotal.innerText = `${catCount} Clicks!`;
-}, false);
+// const cat = document.getElementById('catPic');
+// let catCount = 0;
+// cat.addEventListener('click', () => {
+//   catCount++;
+//   clickTotal.innerText = `${catCount} Clicks!`;
+// }, false);
 
 catName.innerText = firstCat;
 
@@ -45,9 +45,38 @@ const cats = [{
 
 const catList = document.getElementById('catList');
 
+
 cats.forEach(function(cat) {
+
   let li = document.createElement('li');
+  let catName = document.getElementById('catName');
+  let catPic = document.getElementById('catPic');
+
   li.appendChild(document.createTextNode(cat.name));
   li.setAttribute("id", cat.name);
+
   catList.appendChild(li);
+
+
+  // display cat name and pic
+  catName.innerText = cat.name;
+
+  catPic.setAttribute("src", cat.pic);
+
+  // li.addEventListener('click', (function(clickedCat) {
+  //   return function() {
+  //
+  //     let selectedCat = document.getElementById(cat.name);
+  //     let catCount = 0;
+  //     selectedCat.addEventListener('click', () => {
+  //       catCount++;
+  //       clickTotal.innerText = `${catCount} Clicks!`;
+  //     }, false);
+  //
+  //     catName.innerText = cat.name;
+  //   };
+  // })(clickedCat));
+
+
+
 });
