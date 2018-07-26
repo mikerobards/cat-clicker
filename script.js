@@ -23,8 +23,6 @@ const cats = [{
   }
 ];
 
-
-
 cats.forEach(function(cat) {
 
   let li = document.createElement('li');
@@ -33,32 +31,27 @@ cats.forEach(function(cat) {
   li.innerText = cat.name;
   li.setAttribute("id", cat.name);
 
-
   li.addEventListener('click', (function(selectedCat) {
     let catName = document.getElementById('catName');
     let catPic = document.getElementById('catPic');
-    // display cat name and pic
-    catName.innerText = cat.name;
+    let catCount = 0;
+    clickTotal.innerText = `${catCount} Clicks!`;
 
+    return function(selectedCat) {
 
-
-    return function() {
-
-      let selectedCat = document.getElementById(cat.name);
-      let catCount = 0;
-      selectedCat.addEventListener('click', () => {
+      const cat1 = document.getElementById('catPic');
+      cat1.addEventListener('click', (function(selectedCat) {
         catCount++;
         clickTotal.innerText = `${catCount} Clicks!`;
-      });
 
+      }), false);
       catName.innerText = cat.name;
       catPic.setAttribute('src', cat.pic);
-      console.log(catName);
-      console.log(catPic);
+      let catCount = 0;
 
     };
+
   })(cat));
 
   catList.appendChild(li);
-
 });
