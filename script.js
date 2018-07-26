@@ -1,25 +1,5 @@
 const clickTotal = document.getElementById('clicks');
-let catName = document.getElementById('catName');
-const firstCat = "Buddy";
-
-
-// const cat = document.getElementById('catPic');
-// let catCount = 0;
-// cat.addEventListener('click', () => {
-//   catCount++;
-//   clickTotal.innerText = `${catCount} Clicks!`;
-// }, false);
-
-catName.innerText = firstCat;
-
-// const cat2 = document.getElementById('catPic2');
-// let cat2count = 0;
-// cat2.addEventListener('click', () => {
-// 	cat2count++;
-// 	clickTotal2.innerText = `${cat2count} Clicks!`;
-// }, false);
-//
-// catName2.innerText = secondCat;
+const catList = document.getElementById('catList');
 
 const cats = [{
     name: "Buddy",
@@ -43,7 +23,6 @@ const cats = [{
   }
 ];
 
-const catList = document.getElementById('catList');
 
 
 cats.forEach(function(cat) {
@@ -55,16 +34,13 @@ cats.forEach(function(cat) {
   li.setAttribute("id", cat.name);
 
 
-
-
-
   li.addEventListener('click', (function(selectedCat) {
     let catName = document.getElementById('catName');
     let catPic = document.getElementById('catPic');
     // display cat name and pic
     catName.innerText = cat.name;
 
-    catPic.setAttribute('src', cat.pic);
+
 
     return function() {
 
@@ -73,9 +49,13 @@ cats.forEach(function(cat) {
       selectedCat.addEventListener('click', () => {
         catCount++;
         clickTotal.innerText = `${catCount} Clicks!`;
-      }, false);
+      });
 
       catName.innerText = cat.name;
+      catPic.setAttribute('src', cat.pic);
+      console.log(catName);
+      console.log(catPic);
+
     };
   })(cat));
 
