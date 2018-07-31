@@ -61,6 +61,7 @@ cats.forEach(function(cat) {
       clickTotal.innerText = `${cat.count} Clicks!`;
     };
   })());
+
   catList.appendChild(li);
 });
 
