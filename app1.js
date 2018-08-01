@@ -50,6 +50,7 @@ $(document).ready(function() {
       return catLists;
     },
 
+    // show the selectedCat when a cat in the catList is clicked
     showSelectedCat: function(cat) {
       console.log(cat);
 
@@ -67,10 +68,22 @@ $(document).ready(function() {
       return cat;
     },
 
-    // show the selectedCat when a cat in the catList is clicked
+    // increase count when clicked
+    increaseCount: function() {
+      catPic.addEventListener('click', function() {
+        let kitty = catPic.className;
+        let index = cats.findIndex(x => x.name == kitty);
+        cats[index].count++;
+        console.log(kitty);
+        console.log(cats[index].count);
+        clickTotal.innerText = `${cats[index].count} Clicks!`;
+      });
+    },
+
 
     init: function() {
       catListView.init();
+
       // selectedCatView.init();
     }
   };
@@ -79,7 +92,6 @@ $(document).ready(function() {
     // show the catList
     init: function() {
       const catList = document.getElementById('catList');
-
       this.render();
     },
 
@@ -96,24 +108,13 @@ $(document).ready(function() {
 
           return function() {
             octopus.showSelectedCat(cat);
-
           };
         })());
 
         catList.appendChild(li);
       });
-    }
-  };
 
-  const selectedCatView = {
-    // show selectedCat
-    init: function() {
-
-      this.render();
-    },
-
-    render: function() {
-
+      octopus.increaseCount();
     }
   };
 
