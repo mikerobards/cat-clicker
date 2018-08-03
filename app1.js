@@ -147,7 +147,7 @@ $(document).ready(function() {
   // seperated so that render can be called on demand,
   // while init gets called only once
 
-  const catListView = {
+  const catDispalyView = {
     // show the catList ORIGINAL CODE
     // init: function() {
     //   const catList = document.getElementById('catList');
@@ -171,27 +171,39 @@ $(document).ready(function() {
     },
 
     render: function() {
-      // creates list of cats with id's
-      octopus.getCatList().forEach(function(cat) {
-        let li = document.createElement('li');
-        li.innerText = cat.name;
-        li.setAttribute('id', cat.name);
-
-        // add event listener to catLists
-        li.addEventListener('click', (function() {
-          let catName = document.getElementById('catName');
-
-          return function() {
-            octopus.showSelectedCat(cat);
-          };
-        })());
-
-        catList.appendChild(li);
-      });
-
-      octopus.increaseCount();
+      let currentCat = octopus.getCurrentCat();
+      this.catNameElem.textContent = currentCat.name;
+      this.catImgElem.src = currentCat.img;
+      this.catImgElem.alt = currentCat.alt;
+      this.countElem.textContent = currentCat.count;
     }
   };
+
+  // ORIGINAL CODE
+  // render: function() {
+  //
+  //   // creates list of cats with id's
+  //   octopus.getCatList().forEach(function(cat) {
+  //     let li = document.createElement('li');
+  //     li.innerText = cat.name;
+  //     li.setAttribute('id', cat.name);
+  //
+  //     // add event listener to catLists
+  //     li.addEventListener('click', (function() {
+  //       let catName = document.getElementById('catName');
+  //
+  //       return function() {
+  //         octopus.showSelectedCat(cat);
+  //       };
+  //     })());
+  //
+  //     catList.appendChild(li);
+  //   });
+  //
+  //   octopus.increaseCount();
+  // }
+  //
+  // };
 
   octopus.init();
 }());
