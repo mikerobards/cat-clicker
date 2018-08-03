@@ -6,8 +6,9 @@
 
 $(document).ready(function() {
 
-  const catPic = document.getElementById('catPic');
-  const clickTotal = document.getElementById('clicks');
+  // ORIGINAL CODE
+  // const catPic = document.getElementById('catPic');
+  // const clickTotal = document.getElementById('clicks');
 
 
   // MODEL
@@ -138,10 +139,34 @@ $(document).ready(function() {
     // }
   };
 
+  //  VIEW
+
+  // catListView
+
+  // an object with an init method and a render method
+  // seperated so that render can be called on demand,
+  // while init gets called only once
+
   const catListView = {
-    // show the catList
+    // show the catList ORIGINAL CODE
+    // init: function() {
+    //   const catList = document.getElementById('catList');
+    //   this.render();
+    // },
+
     init: function() {
-      const catList = document.getElementById('catList');
+      // stores pointers to our DOM elements for access later
+      this.catElem = document.getElementById('cat-display');
+      this.catNameElem = document.getElementById('cat-name');
+      this.catImgElem = document.getElementById('cat-img');
+      this.catCountElem = document.getElementById('cat-clicks');
+
+      // on click, increases the current cat's count
+      this.catImgElem.addEventListener('click', function() {
+        octopus.increaseCount();
+      });
+
+      // render this view (updates the DOM elements with the correct values)
       this.render();
     },
 

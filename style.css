@@ -15,7 +15,7 @@ h2 {
   margin: 2% 20%;
 }
 
-#catPic {
+#cat-img {
   height: auto;
   width: 50%;
 }
@@ -32,14 +32,14 @@ h2 {
   font-weight: bold;
 }
 
-.catContainer {
+#cat-display {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#catList li {
+#cat-list li {
   list-style: none;
   font-size: 20px;
 }
@@ -48,5 +48,3 @@ li:hover, img:hover {
   color: red;
   cursor: pointer;
 }
-
-`
